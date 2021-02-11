@@ -6,6 +6,7 @@ title: "Question 3"
 
 
 ```{r}
+library(kendalltau)
 #' Compute confidence interval for Kendall's Tau.
 #' @param x a numeric vector
 #' @param y a numeric vector
@@ -24,8 +25,7 @@ tau_ci(mtcars$mpg, mtcars$hp, level = 0.99)
 ```
 
 
-
-##### (b) Construct a 95\% confidence interval for the population Kendull's Tau using the data in `data.csv`.
+##### (b) Compute a 95\% confidence interval for the population Kendull's Tau using the data in `data.csv`.
 
 
 

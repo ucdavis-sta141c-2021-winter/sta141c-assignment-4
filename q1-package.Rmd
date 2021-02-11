@@ -38,14 +38,14 @@ Any pair of observations $(x_{i},y_{i})$ and $(x_{j},y_{j})$, where $i<j$, are s
 ##### (b) In the package, create another function `fasttau` using Rcpp that computes the kendall's Tau.
 
 
-You could pretty much follow the instructions in `https://r-pkgs.org/` chapter 2. However, please skip step 2.5 `use_git` - we don't need it because the assignment Rproj is already managing the nested package Rproj.
+You could pretty much follow the instructions in `https://r-pkgs.org/` chapter 2. However, please skip step 2.5 and 2.17 - we don't need them because the assignment Rproj is already managing the package Rproj.
 
 You will need to do the followings.
 
 - Implement the functions.
 - Write documentations.
 - Write simple tests using `testthat`.
-  - compare your results with `cor.test(x, y, method = "kendall")`.
+  - check if your results are consistant with `cor.test(x, y, method = "kendall")`.
 - Pass the test by running `devtools::check()` test (or use the "Test Package" button in the Build pane).
 - Install the package with `devtools::install()` (or use the "Install and Restart" button in the Build pane).
 - Do not forget to stage, commit and push your package at the end.
