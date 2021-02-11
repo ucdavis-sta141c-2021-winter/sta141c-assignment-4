@@ -1,0 +1,51 @@
+---
+title: "Question 1 instruction"
+editor_options: 
+  chunk_output_type: console
+---
+
+NOTE: you don't need to knit this file.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+The following will start a new project called `kendalltau`. You might encounter
+
+> New project 'kendalltau' is nested inside an existing project './', which is rarely a good idea.
+
+And it is expected. Create anyway.
+
+```{r, eval = FALSE}
+library(devtools)
+create_package("kendalltau")
+```
+
+After creating the package project, a new RStudio window should be opened.
+
+The goal of this package is to provide an R function and an Rcpp function to compute the Kendall's $\tau$ correlction coefficient.
+
+Suppose we have pairs $(x_i, y_i)$, $i=1,...,n$. The Kendall's Tau is defined as
+$$
+\tau = \frac{n_c - n_d}{\binom{n}{2}}
+$$
+where $n_c$ is the number of concordant pairs and $n_d$ is the number of discordant pairs.
+
+Any pair of observations $(x_{i},y_{i})$ and $(x_{j},y_{j})$, where $i<j$, are said to be concordant if the sort order of $(x_{i},x_{j})$ and $(y_{i},y_{j})$ agrees: that is, if either both $x_{i}>x_{j}$ and $y_{i}>y_{j}$ holds or both $x_{i}<x_{j}$ and $y_{i}<y_{j}$; otherwise they are said to be discordant.
+
+##### (a) In the package, create an R function `tau` in the package that computes the Kendall's Tau between `x` and `y`.
+
+##### (b) In the package, create another function `fasttau` using Rcpp that computes the kendall's Tau.
+
+
+You could pretty much follow the instructions in `https://r-pkgs.org/` chapter 2. However, please skip step 2.5 `use_git` - we don't need it because the assignment Rproj is already managing the nested package Rproj.
+
+You will need to do the followings.
+
+- Implement the functions.
+- Write documentations.
+- Write simple tests using `testthat`.
+  - compare your results with `cor.test(x, y, method = "kendall")`.
+- Pass the test by running `devtools::check()` test (or use the "Test Package" button in the Build pane).
+- Install the package with `devtools::install()` (or use the "Install and Restart" button in the Build pane).
+- Do not forget to stage, commit and push your package at the end.

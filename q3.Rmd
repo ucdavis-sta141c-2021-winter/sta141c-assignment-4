@@ -1,0 +1,41 @@
+---
+title: "Question 3"
+---
+
+##### (a) By using the function `fasttau` (or `tau`) developed in question 1, develop a classical bootstrap procedure to compute an arbitrary level confidence interval for the population Kendall's Tau between two variables.
+
+
+```{r}
+#' Compute confidence interval for Kendall's Tau.
+#' @param x a numeric vector
+#' @param y a numeric vector
+#' @param B integer, number of bootstrap samples
+#' @param level numeric, between 0 and 1.
+#' @return lower and upper bound of the confidence interval
+tau_ci <- function(x, y, B = 10000, level = 0.95) {
+
+}
+```
+
+```{r}
+tau_ci(mtcars$mpg, mtcars$hp, level = 0.90)
+tau_ci(mtcars$mpg, mtcars$hp, level = 0.95)
+tau_ci(mtcars$mpg, mtcars$hp, level = 0.99)
+```
+
+
+
+##### (b) Construct a 95\% confidence interval for the population Kendull's Tau using the data in `data.csv`.
+
+
+
+
+##### (c) For bivariate normal data, it is known that the population Kendull's Tau is
+
+$$
+\tau = \frac{2}{\pi} \text{arcsin}{\rho}
+$$
+where $\rho$ is the Pearson correlation.
+
+Use this fact to construct a confidence interval for $\rho$ using the result from part (b).
+

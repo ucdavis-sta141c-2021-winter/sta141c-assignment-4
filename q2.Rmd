@@ -1,0 +1,40 @@
+---
+title: "Question 2"
+---
+
+
+```{r, message = FALSE}
+library(tidyverse)
+```
+
+Suppose we have two variables `x` and `y` and we want to calculate the correlations between them.
+The observations are spread into 100 files (generated with the below code).
+
+```{r, eval = FALSE}
+dir.create("files", showWarnings = FALSE)
+set.seed(141)
+1:100 %>% walk(function(i) {
+    dt <- tibble(x = rnorm(5000), y = rnorm(5000))
+    write_csv(dt, file.path("files", sprintf("file%02d.csv", i)))
+})
+```
+
+##### (a) Combine all files and compute the sample correlation between `x` and `y`.
+
+
+
+Part (a) could be quite memory demanding because it requires to combine all files into one huge dataframe. An approximation of part (a) can be done by using map-reduce.
+
+
+##### (b) Use `parLapply` to compute the (approximated) sample correlation between `x` and `y`.
+
+Hint: you should read the data in the workers.
+
+
+
+##### (c) Use `parLapplyLB` to compute the (approximated) sample correlation between `x` and `y`.
+
+
+
+##### (e) Benchmark part (a) to part (c). Comment on the speeds.
+

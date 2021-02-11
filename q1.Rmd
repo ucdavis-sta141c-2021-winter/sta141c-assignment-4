@@ -1,0 +1,12 @@
+---
+title: "Question 1"
+---
+
+##### (a) Follow `q1-instruction.Rmd` to create the package `kendalltau`.
+
+##### (b) Write a benchmark to test the perforamnce of `tau` and `fasttau`. Try different values of $n = 10, 100, 1000$
+
+```{r}
+library(kendalltau)
+
+```
