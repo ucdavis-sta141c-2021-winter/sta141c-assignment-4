@@ -19,11 +19,11 @@ set.seed(141)
 })
 ```
 
-##### (a) Combine all files and compute the sample correlation between `x` and `y`.
+##### (a) Combine all files to form a huge dataframe and compute the sample correlation between `x` and `y` from there.
 
 
 
-Part (a) could be quite memory demanding because it requires to combine all files into one huge dataframe. An approximation of part (a) can be done by using map-reduce.
+Part (a) could be quite memory demanding because it requires to combine all files into one huge dataframe. An approximation of part (a) can be done by using a map-reduce like procedure as below.
 
 
 ##### (b) Use `parLapply` to compute the (approximated) sample correlation between `x` and `y`.
