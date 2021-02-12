@@ -37,5 +37,5 @@ $$
 $$
 where $\rho$ is the Pearson correlation.
 
-Use this fact to construct a confidence interval for $\rho$ using the result from part (b).
+Use this fact to construct a confidence interval for $\rho$ together with the result from part (b).
 
